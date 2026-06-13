@@ -76,6 +76,25 @@
         .vendor-calc-value { color: #2c3e50; font-weight: 700; font-size: 14px; }
         .hint-box { background: #fffacd; border: 2px solid #f0e68c; border-radius: 8px; padding: 20px; margin-top: 30px; color: #856404; font-size: 13px; line-height: 1.6; }
         .hint-box strong { color: #333; }
+        .value-section { margin-top: 40px; padding-top: 40px; border-top: 2px solid #f0f2f5; }
+        .value-section-title { font-size: 18px; font-weight: 700; color: #2c3e50; margin-bottom: 24px; text-align: center; }
+        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        .value-box { background: #f8fbff; border-radius: 8px; padding: 24px; border: 2px solid #e8f1f8; }
+        .value-box.highlight { border-color: #27ae60; background: #f0fff4; }
+        .value-box-title { font-size: 14px; font-weight: 700; color: #2c3e50; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #3498db; }
+        .value-box.highlight .value-box-title { border-bottom-color: #27ae60; }
+        .value-point { font-size: 13px; line-height: 1.7; color: #2c3e50; margin-bottom: 10px; padding-left: 20px; position: relative; }
+        .value-point::before { content: "✓"; position: absolute; left: 0; color: #27ae60; font-weight: 700; }
+        .value-point.warning-point::before { content: "€"; color: #e74c3c; }
+        .agency-box { background: #fff5f5; border: 2px solid #fed7d7; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        .agency-box-title { font-size: 14px; font-weight: 700; color: #c53030; margin-bottom: 12px; }
+        .agency-cost-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .agency-cost-item { background: white; padding: 12px; border-radius: 6px; border: 1px solid #fed7d7; }
+        .agency-cost-label { font-size: 11px; color: #7f8c8d; font-weight: 600; margin-bottom: 4px; text-transform: uppercase; }
+        .agency-cost-value { font-size: 16px; font-weight: 700; color: #c53030; }
+        .conclusion-box { background: #e8f5e9; border: 2px solid #a5d6a7; border-radius: 8px; padding: 20px; margin-top: 20px; font-size: 13px; line-height: 1.7; color: #1b5e20; }
+        .conclusion-box strong { color: #1a3c34; }
+        @media (max-width: 768px) { .value-grid { grid-template-columns: 1fr; } .agency-cost-grid { grid-template-columns: 1fr; } }
         @media (max-width: 768px) { .input-grid, .settings-grid { grid-template-columns: 1fr; } .preset-buttons { flex-direction: column; } .container { padding: 20px; } h1 { font-size: 24px; } .results-section { grid-template-columns: 1fr; gap: 20px; } .comparison-grid { grid-template-columns: 1fr; } .vendor-calc-grid { grid-template-columns: 1fr; } .profit-value { font-size: 28px; } }
     </style>
 </head>
@@ -240,7 +259,62 @@
             </div>
 
             <div class="hint-box">
-                <strong>⚠️ Wichtiger Hinweis:</strong> Die EK-Preise, die euch als Seller angeboten wurden (CD: 13,74 € / Galakto: 47,93 €), liegen nahe an eurem Vendor-EK von Amazon. Als Seller habt ihr jedoch zusätzliche Kosten von ~35-40% des Netto-Umsatzes (Referral + FBA + Werbung), die ein Vendor nicht trägt. Damit die Zahlen für euch als Seller aufgehen, bräuchtet ihr deutlich günstigere Einkaufspreise.
+                <strong>⚠️ Wichtiger Hinweis:</strong> Die EK-Preise, die als Seller angeboten wurden (CD: 13,74 € / Galakto: 47,93 €), liegen nahe an eurem Vendor-EK von Amazon. Als Seller fallen jedoch zusätzliche Kosten von ~35-40% des Netto-Umsatzes an (Referral + FBA + Werbung), die ein Vendor nicht trägt. Damit die Zahlen als Seller aufgehen, werden deutlich günstigere Einkaufspreise benötigt.
+            </div>
+        </div>
+
+        <!-- Mehrwert & Agentur-Vergleich -->
+        <div class="value-section">
+            <h2 class="value-section-title">Was steckt noch drin? Der echte Mehrwert</h2>
+
+            <div class="value-grid">
+                <div class="value-box highlight">
+                    <div class="value-box-title">🛠️ Enthaltene Tools & Infrastruktur</div>
+                    <div class="value-point">Professionelles Amazon Ads-Management mit eigenentwickelten Optimierungstools</div>
+                    <div class="value-point">Automatische Gebotssteuerung auf Basis echter Performance-Daten</div>
+                    <div class="value-point">Kampagnen-Monitoring und Reporting (kein extra Abo nötig)</div>
+                    <div class="value-point">Jahre aufgebautes Seller-Know-how, Rankings & Bewertungen</div>
+                    <div class="value-point">Etablierter Account mit Vertrauen bei Amazon — kein Neustart von null</div>
+                    <div class="value-point">Kein eigenes Team nötig für operatives Amazon-Management</div>
+                </div>
+                <div class="value-box">
+                    <div class="value-box-title">🏢 Alternative: Eigener Seller-Account</div>
+                    <div class="value-point warning-point">Amazon Professional Account: ~40 €/Monat</div>
+                    <div class="value-point warning-point">Ads-Management-Tool (z.B. Perpetua, Helium 10): 300–800 €/Monat</div>
+                    <div class="value-point warning-point">Listing-Optimierung & SEO-Tool: 100–300 €/Monat</div>
+                    <div class="value-point warning-point">Account-Manager intern oder extern: 2.000–4.000 €/Monat</div>
+                    <div class="value-point warning-point">Anlaufzeit bis Ranking aufgebaut: 6–12 Monate</div>
+                    <div class="value-point warning-point">Fehler-Risiko bei Amazon-Richtlinien (Account-Sperrung möglich)</div>
+                </div>
+            </div>
+
+            <div class="agency-box">
+                <div class="agency-box-title">📋 Was eine externe Amazon-Agentur kosten würde</div>
+                <p style="font-size: 13px; color: #555; margin-bottom: 14px;">Eine professionelle Amazon-Agentur, die den Seller-Account für EdelKids verwaltet, würde typischerweise folgendes verlangen:</p>
+                <div class="agency-cost-grid">
+                    <div class="agency-cost-item">
+                        <div class="agency-cost-label">Monatliches Fixum</div>
+                        <div class="agency-cost-value">1.500 – 3.500 €</div>
+                    </div>
+                    <div class="agency-cost-item">
+                        <div class="agency-cost-label">Provision vom Brutto-Umsatz</div>
+                        <div class="agency-cost-value">5 – 12 %</div>
+                    </div>
+                    <div class="agency-cost-item">
+                        <div class="agency-cost-label">Setup-Fee (einmalig)</div>
+                        <div class="agency-cost-value">2.000 – 5.000 €</div>
+                    </div>
+                    <div class="agency-cost-item">
+                        <div class="agency-cost-label">Mindestlaufzeit</div>
+                        <div class="agency-cost-value">6 – 12 Monate</div>
+                    </div>
+                </div>
+                <p style="font-size: 12px; color: #888; margin-top: 12px;">Bei 100 Einheiten/Monat à ~30 € VK = ~3.000 € Umsatz → Agentur-Kosten: ~1.500 € Fix + ~300 € Provision = <strong style="color:#c53030">~1.800 €/Monat nur für die Verwaltung</strong> — noch ohne Werbebudget!</p>
+            </div>
+
+            <div class="conclusion-box">
+                <strong>💡 Fazit:</strong> Eine Partnerschaft über einen bestehenden Seller-Account spart EdelKids die komplette Infrastruktur, den Tool-Stack und die Anlaufphase. Das eigene Team müsste lediglich geschult werden — nicht neu aufgebaut. <br><br>
+                <strong>Die Herausforderung bleibt:</strong> Damit das Modell für beide Seiten funktioniert, müssen die EK-Konditionen die Amazon-Kostenstruktur widerspiegeln. Als Seller gehen ~35–40% des Netto-Umsatzes an Gebühren und Werbung — das ist strukturell anders als im stationären Handel oder beim Vendor-Modell. Mit angepassten EK-Preisen wäre eine echte Win-Win-Partnerschaft möglich.
             </div>
         </div>
     </div>
