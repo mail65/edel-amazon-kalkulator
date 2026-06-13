@@ -233,29 +233,76 @@
             </div>
 
             <div class="vendor-calc-section">
-                <div class="vendor-calc-title">Vendor-Vergleichsrechnung (statisch)</div>
+                <div class="vendor-calc-title">Kostenverteilung: Wer zahlt was?</div>
+                <p style="font-size: 13px; color: #555; margin-bottom: 16px;">Der entscheidende Unterschied: Im Vendor-Modell trägt <strong>Amazon</strong> alle Vertriebskosten. Im Seller-Modell trägt <strong>der Seller</strong> sie selbst.</p>
+
                 <div class="vendor-product-row">
-                    <div class="vendor-product-name">Deep Purple CD</div>
-                    <div class="vendor-calc-grid">
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Endpreis (VK)</div><div class="vendor-calc-value">18,99 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Vendor-EK (50%)</div><div class="vendor-calc-value">9,50 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">COGS (Torsten)</div><div class="vendor-calc-value">6,50 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Torsten-Gewinn</div><div class="vendor-calc-value" style="color: #27ae60; font-weight: 700;">3,00 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Dein Seller-Gewinn</div><div class="vendor-calc-value" id="sellerCdProfit" style="color: #e74c3c; font-weight: 700;">0,00 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Deine Seller-Marge</div><div class="vendor-calc-value" id="sellerCdMargin" style="color: #e74c3c; font-weight: 700;">0,0%</div></div>
+                    <div class="vendor-product-name">Deep Purple CD — VK: 18,99 € (Netto: 15,96 €)</div>
+                    <div class="vendor-calc-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="vendor-calc-item" style="background:#f0f8ff;">
+                            <div class="vendor-calc-label">Kostenposition</div>
+                            <div class="vendor-calc-value" style="font-size:12px;color:#555;">Posten</div>
+                        </div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;">
+                            <div class="vendor-calc-label">🏢 Vendor-Modell</div>
+                            <div class="vendor-calc-value" style="font-size:12px;color:#555;">Wer trägt es?</div>
+                        </div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;">
+                            <div class="vendor-calc-label">🛍️ Seller-Modell</div>
+                            <div class="vendor-calc-value" style="font-size:12px;color:#555;">Wer trägt es?</div>
+                        </div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">Referral Fee (15%)</div><div class="vendor-calc-value">2,39 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">FBA Fulfillment</div><div class="vendor-calc-value">2,80 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">Werbung (~15%)</div><div class="vendor-calc-value">2,39 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">EK den Seller zahlt</div><div class="vendor-calc-value">13,74 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon zahlt EdelKids</div><div class="vendor-calc-value" style="color:#27ae60">~9,50 €</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller zahlt EdelKids</div><div class="vendor-calc-value" style="color:#e74c3c">13,74 €</div></div>
+
+                        <div class="vendor-calc-item" style="border-top:2px solid #ccc;"><div class="vendor-calc-label"><strong>Verbleib für Seller</strong></div><div class="vendor-calc-value"></div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;border-top:2px solid #a5d6a7;"><div class="vendor-calc-label">EdelKids Marge</div><div class="vendor-calc-value" style="color:#27ae60;font-size:16px;">~9,50 €</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;border-top:2px solid #fed7d7;"><div class="vendor-calc-label">Seller-Gewinn</div><div class="vendor-calc-value" id="sellerCdProfit" style="color:#e74c3c;font-size:16px;">...</div></div>
                     </div>
                 </div>
-                <div class="vendor-product-row">
-                    <div class="vendor-product-name">Galakto Box</div>
-                    <div class="vendor-calc-grid">
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Endpreis (VK)</div><div class="vendor-calc-value">59,99 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Vendor-EK (50%)</div><div class="vendor-calc-value">30,00 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">COGS (Torsten)</div><div class="vendor-calc-value">22,50 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Torsten-Gewinn</div><div class="vendor-calc-value" style="color: #27ae60; font-weight: 700;">7,50 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Dein Seller-Gewinn</div><div class="vendor-calc-value" id="sellerGalaktoProfit" style="color: #e74c3c; font-weight: 700;">0,00 €</div></div>
-                        <div class="vendor-calc-item"><div class="vendor-calc-label">Deine Seller-Marge</div><div class="vendor-calc-value" id="sellerGalaktoMargin" style="color: #e74c3c; font-weight: 700;">0,0%</div></div>
+
+                <div class="vendor-product-row" style="margin-top:16px;">
+                    <div class="vendor-product-name">Galakto Box — VK: 59,99 € (Netto: 50,41 €)</div>
+                    <div class="vendor-calc-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+                        <div class="vendor-calc-item" style="background:#f0f8ff;"><div class="vendor-calc-label">Kostenposition</div><div class="vendor-calc-value" style="font-size:12px;color:#555;">Posten</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">🏢 Vendor-Modell</div><div class="vendor-calc-value" style="font-size:12px;color:#555;">Wer trägt es?</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">🛍️ Seller-Modell</div><div class="vendor-calc-value" style="font-size:12px;color:#555;">Wer trägt es?</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">Referral Fee (15%)</div><div class="vendor-calc-value">7,56 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">FBA Fulfillment</div><div class="vendor-calc-value">5,50 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">Werbung (~15%)</div><div class="vendor-calc-value">7,56 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon</div><div class="vendor-calc-value" style="color:#27ae60">✔ Amazon zahlt</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller</div><div class="vendor-calc-value" style="color:#e74c3c">✖ du zahlst</div></div>
+
+                        <div class="vendor-calc-item"><div class="vendor-calc-label">EK den Seller zahlt</div><div class="vendor-calc-value">47,93 €</div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;"><div class="vendor-calc-label">Amazon zahlt EdelKids</div><div class="vendor-calc-value" style="color:#27ae60">~30,00 €</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;"><div class="vendor-calc-label">Seller zahlt EdelKids</div><div class="vendor-calc-value" style="color:#e74c3c">47,93 €</div></div>
+
+                        <div class="vendor-calc-item" style="border-top:2px solid #ccc;"><div class="vendor-calc-label"><strong>Verbleib für Seller</strong></div><div class="vendor-calc-value"></div></div>
+                        <div class="vendor-calc-item" style="background:#e8f5e9;border-top:2px solid #a5d6a7;"><div class="vendor-calc-label">EdelKids Marge</div><div class="vendor-calc-value" style="color:#27ae60;font-size:16px;">~30,00 €</div></div>
+                        <div class="vendor-calc-item" style="background:#fff5f5;border-top:2px solid #fed7d7;"><div class="vendor-calc-label">Seller-Gewinn</div><div class="vendor-calc-value" id="sellerGalaktoProfit" style="color:#e74c3c;font-size:16px;">...</div></div>
                     </div>
                 </div>
+                <p style="font-size:12px;color:#888;margin-top:12px;">* Vendor-EK ist geschätzt (~50% vom VK). Tatsächliche Amazon-Vendor-Konditionen sind vertraulich.</p>
             </div>
 
             <div class="hint-box">
@@ -360,9 +407,7 @@
             roiPercent: document.getElementById('roiPercent'),
             warningMontly: document.getElementById('warningMontly'),
             sellerCdProfit: document.getElementById('sellerCdProfit'),
-            sellerCdMargin: document.getElementById('sellerCdMargin'),
-            sellerGalaktoProfit: document.getElementById('sellerGalaktoProfit'),
-            sellerGalaktoMargin: document.getElementById('sellerGalaktoMargin')
+            sellerGalaktoProfit: document.getElementById('sellerGalaktoProfit')
         };
 
         function formatCurrency(value) {
@@ -445,24 +490,20 @@
             const cdSellerProfit = cdNettoVk - cdRefFee - 2.80 - cdAdCost - cdReturnCost - cdMisc - 13.74;
             const cdSellerMargin = cdNettoVk > 0 ? (cdSellerProfit / cdNettoVk) * 100 : 0;
 
+            // CD Seller-Gewinn (fix)
             outputs.sellerCdProfit.textContent = formatCurrency(cdSellerProfit);
-            outputs.sellerCdMargin.textContent = formatPercent(cdSellerMargin) + '%';
             outputs.sellerCdProfit.style.color = cdSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
-            outputs.sellerCdMargin.style.color = cdSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
 
-            // Vendor Calculation Galakto (immer mit fixen Werten)
+            // Galakto Seller-Gewinn (fix)
             const galNettoVk = 59.99 / 1.19;
             const galRefFee = (galNettoVk * refFeePercent) / 100;
             const galAdCost = (galNettoVk * adCostPercent) / 100;
             const galMisc = (galNettoVk * miscPercent) / 100;
             const galReturnCost = 47.93 * returnRatePercent / 100;
             const galSellerProfit = galNettoVk - galRefFee - 5.50 - galAdCost - galReturnCost - galMisc - 47.93;
-            const galSellerMargin = galNettoVk > 0 ? (galSellerProfit / galNettoVk) * 100 : 0;
 
             outputs.sellerGalaktoProfit.textContent = formatCurrency(galSellerProfit);
-            outputs.sellerGalaktoMargin.textContent = formatPercent(galSellerMargin) + '%';
             outputs.sellerGalaktoProfit.style.color = galSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
-            outputs.sellerGalaktoMargin.style.color = galSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
         }
 
         document.querySelectorAll('.preset-btn').forEach(btn => {
