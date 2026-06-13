@@ -362,41 +362,33 @@
             outputs.roiPercent.textContent = formatPercent(roi);
             outputs.warningMontly.innerHTML = getWarning(margin);
 
-            // Vendor Calculation CD
+            // Vendor Calculation CD (immer mit fixen Werten, unabhängig von den Inputs oben)
             const cdNettoVk = 18.99 / 1.19;
-            const cdVendorEk = 9.50;
-            const cdCogs = 6.50;
-            const cdVendorProfit = cdVendorEk - cdCogs;
-            const cdSellerProfit = cdNettoVk - refFeeAmount - 2.80 - adCostAmount - (13.74 * returnRatePercent / 100) - miscAmount - 13.74;
+            const cdRefFee = (cdNettoVk * refFeePercent) / 100;
+            const cdAdCost = (cdNettoVk * adCostPercent) / 100;
+            const cdMisc = (cdNettoVk * miscPercent) / 100;
+            const cdReturnCost = 13.74 * returnRatePercent / 100;
+            const cdSellerProfit = cdNettoVk - cdRefFee - 2.80 - cdAdCost - cdReturnCost - cdMisc - 13.74;
             const cdSellerMargin = cdNettoVk > 0 ? (cdSellerProfit / cdNettoVk) * 100 : 0;
 
-            outputs.sellerCdProfit.textContent = formatCurrency(Math.max(0, cdSellerProfit));
-            outputs.sellerCdMargin.textContent = formatPercent(Math.max(0, cdSellerMargin));
-            if (cdSellerProfit < 0) {
-                outputs.sellerCdProfit.style.color = '#e74c3c';
-                outputs.sellerCdMargin.style.color = '#e74c3c';
-            } else {
-                outputs.sellerCdProfit.style.color = '#27ae60';
-                outputs.sellerCdMargin.style.color = '#27ae60';
-            }
+            outputs.sellerCdProfit.textContent = formatCurrency(cdSellerProfit);
+            outputs.sellerCdMargin.textContent = formatPercent(cdSellerMargin) + '%';
+            outputs.sellerCdProfit.style.color = cdSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
+            outputs.sellerCdMargin.style.color = cdSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
 
-            // Vendor Calculation Galakto
+            // Vendor Calculation Galakto (immer mit fixen Werten)
             const galNettoVk = 59.99 / 1.19;
-            const galVendorEk = 30.00;
-            const galCogs = 22.50;
-            const galVendorProfit = galVendorEk - galCogs;
-            const galSellerProfit = galNettoVk - refFeeAmount - 5.50 - adCostAmount - (47.93 * returnRatePercent / 100) - miscAmount - 47.93;
+            const galRefFee = (galNettoVk * refFeePercent) / 100;
+            const galAdCost = (galNettoVk * adCostPercent) / 100;
+            const galMisc = (galNettoVk * miscPercent) / 100;
+            const galReturnCost = 47.93 * returnRatePercent / 100;
+            const galSellerProfit = galNettoVk - galRefFee - 5.50 - galAdCost - galReturnCost - galMisc - 47.93;
             const galSellerMargin = galNettoVk > 0 ? (galSellerProfit / galNettoVk) * 100 : 0;
 
-            outputs.sellerGalaktoProfit.textContent = formatCurrency(Math.max(0, galSellerProfit));
-            outputs.sellerGalaktoMargin.textContent = formatPercent(Math.max(0, galSellerMargin));
-            if (galSellerProfit < 0) {
-                outputs.sellerGalaktoProfit.style.color = '#e74c3c';
-                outputs.sellerGalaktoMargin.style.color = '#e74c3c';
-            } else {
-                outputs.sellerGalaktoProfit.style.color = '#27ae60';
-                outputs.sellerGalaktoMargin.style.color = '#27ae60';
-            }
+            outputs.sellerGalaktoProfit.textContent = formatCurrency(galSellerProfit);
+            outputs.sellerGalaktoMargin.textContent = formatPercent(galSellerMargin) + '%';
+            outputs.sellerGalaktoProfit.style.color = galSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
+            outputs.sellerGalaktoMargin.style.color = galSellerProfit >= 0 ? '#27ae60' : '#e74c3c';
         }
 
         document.querySelectorAll('.preset-btn').forEach(btn => {
